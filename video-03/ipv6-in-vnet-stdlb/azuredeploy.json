@@ -120,24 +120,6 @@
           {
             "properties": {
               "frontendIPConfiguration": {
-                "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', 'loadBalancer', 'LBFE')]"
-              },
-              "backendAddressPool": {
-                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'loadBalancer', 'LBBAP')]"
-              },
-              "protocol": "Tcp",
-              "frontendPort": 8080,
-              "backendPort": 8080,
-              "idleTimeoutInMinutes": 15,
-              "probe": {
-                "id": "[resourceId('Microsoft.Network/loadBalancers/probes', 'loadBalancer', 'IPv4IPv6probe')]"
-              }
-            },
-            "name": "lbrule"
-          },
-          {
-            "properties": {
-              "frontendIPConfiguration": {
                 "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', 'loadBalancer', 'LBFE-v6')]"
               },
               "backendAddressPool": {
@@ -306,12 +288,7 @@
               },
               "subnet": {
                 "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'VNET', variables('subnetName'))]"
-              },
-              "loadBalancerBackendAddressPools": [
-                {
-                  "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'loadBalancer', 'LBBAP')]"
-                }
-              ]
+              }
             }
           },
           {
