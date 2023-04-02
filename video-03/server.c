@@ -26,8 +26,7 @@ int main() {
     printf("Press Ctrl+C to shutdown\n");
 
     char address_buffer[100];
-    char request[1024];
-    int rec_count, server_fd, client_fd, send_count;
+    int server_fd, client_fd, send_count;
     const char *response =
         "HTTP/1.1 200 OK\r\n"
         "Connection: close\r\n"
@@ -83,12 +82,6 @@ int main() {
         memset(address_buffer, 0, sizeof(address_buffer));
         getnameinfo((struct sockaddr*)&client_address, client_len, address_buffer, sizeof(address_buffer), 0, 0, NI_NUMERICHOST);
         printf("%s\n", address_buffer);
-
-        printf("Reading request...\n");
-        memset(request, 0, sizeof(request));
-        rec_count = recv(client_fd, request, 1024, MSG_DONTWAIT);
-        printf("Received %d bytes.\n", rec_count);
-        printf("-> %s\n", request);
 
         printf("Sending response...\n");
         send_count = send(client_fd, response, strlen(response), 0);
