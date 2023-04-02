@@ -248,12 +248,12 @@
             }
           },
           {
-            "name": "allow-RDP-in",
+            "name": "allow-SSH-in",
             "properties": {
-              "description": "Allow RDP",
+              "description": "Allow SSH",
               "protocol": "Tcp",
               "sourcePortRange": "*",
-              "destinationPortRange": "3389",
+              "destinationPortRange": "22",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*",
               "access": "Allow",
