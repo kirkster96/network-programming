@@ -34,7 +34,7 @@ int main() {
 
     time_t timer;
     char *time_msg;
-    
+
     struct sockaddr_storage client_address;
     socklen_t client_len = sizeof(client_address);
 
@@ -49,8 +49,7 @@ int main() {
     getaddrinfo(0, PORT, &hints, &bind_address);
 
     printf("socket()\n");
-    server_fd = socket(bind_address->ai_family,
-            bind_address->ai_socktype, bind_address->ai_protocol);
+    server_fd = socket(bind_address->ai_family, bind_address->ai_socktype, bind_address->ai_protocol);
     if (server_fd < 0) {
         fprintf(stderr, "socket() failed.\n");
         return 1;
