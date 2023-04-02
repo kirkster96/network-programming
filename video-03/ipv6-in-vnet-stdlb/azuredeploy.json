@@ -110,9 +110,6 @@
         ],
         "backendAddressPools": [
           {
-            "name": "LBBAP"
-          },
-          {
             "name": "LBBAP-v6"
           }
         ],
