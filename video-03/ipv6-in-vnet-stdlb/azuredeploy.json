@@ -180,7 +180,7 @@
             "properties": {
               "protocol": "Tcp",
               "port": 8080,
-              "intervalInSeconds": 5,
+              "intervalInSeconds": 30,
               "numberOfProbes": 2
             }
           }
