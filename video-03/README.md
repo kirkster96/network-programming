@@ -1,8 +1,8 @@
 # Video 03 - IPv6 Server on Azure VM
 In this video:
-    - What is IPv4 and IPv6?
-    - How to deploy a IPv6 Azure VM.
-    - How to write IPv6 Server code.
+- What is IPv4 and IPv6?
+- How to deploy a IPv6 Azure VM.
+- How to write IPv6 Server code.
     
 ### IPv6 in Azure Virtual Network (VNET) with Std LB
 [![Deploy To Azure](https://raw.githubusercontent.com/kirkster96/network-programming/video-03/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkirkster96%2Fnetwork-programming%2Fvideo-03%2Fvideo-03%2Fipv6-in-vnet-stdlb%2Fazuredeploy.json)
