@@ -147,8 +147,8 @@
                 "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'loadBalancer', 'LBBAP')]"
               },
               "protocol": "Tcp",
-              "frontendPort": 80,
-              "backendPort": 80,
+              "frontendPort": 8080,
+              "backendPort": 8080,
               "idleTimeoutInMinutes": 15,
               "probe": {
                 "id": "[resourceId('Microsoft.Network/loadBalancers/probes', 'loadBalancer', 'IPv4IPv6probe')]"
@@ -165,8 +165,8 @@
                 "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'loadBalancer', 'LBBAP-v6')]"
               },
               "protocol": "Tcp",
-              "frontendPort": 80,
-              "backendPort": 80,
+              "frontendPort": 8080,
+              "backendPort": 8080,
               "probe": {
                 "id": "[resourceId('Microsoft.Network/loadBalancers/probes', 'loadBalancer', 'IPv4IPv6probe')]"
               }
@@ -179,7 +179,7 @@
             "name": "IPv4IPv6probe",
             "properties": {
               "protocol": "Tcp",
-              "port": 80,
+              "port": 8080,
               "intervalInSeconds": 5,
               "numberOfProbes": 2
             }
@@ -220,12 +220,12 @@
       "properties": {
         "securityRules": [
           {
-            "name": "allow-HTTP-in",
+            "name": "allow-CLIENT-in",
             "properties": {
-              "description": "Allow HTTP",
+              "description": "Allow CLIENT",
               "protocol": "TCP",
-              "sourcePortRange": "80",
-              "destinationPortRange": "80",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8080",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*",
               "access": "Allow",
