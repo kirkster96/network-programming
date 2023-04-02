@@ -113,14 +113,6 @@
       "properties": {
         "frontendIpConfigurations": [
           {
-            "name": "LBFE",
-            "properties": {
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'lbpublicip')]"
-              }
-            }
-          },
-          {
             "name": "LBFE-v6",
             "properties": {
               "publicIPAddress": {
@@ -141,6 +133,24 @@
           {
             "properties": {
               "frontendIPConfiguration": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', 'loadBalancer', 'LBFE')]"
+              },
+              "backendAddressPool": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'loadBalancer', 'LBBAP')]"
+              },
+              "protocol": "Tcp",
+              "frontendPort": 8080,
+              "backendPort": 8080,
+              "idleTimeoutInMinutes": 15,
+              "probe": {
+                "id": "[resourceId('Microsoft.Network/loadBalancers/probes', 'loadBalancer', 'IPv4IPv6probe')]"
+              }
+            },
+            "name": "lbrule"
+          },
+          {
+            "properties": {
+              "frontendIPConfiguration": {
                 "id": "[resourceId('Microsoft.Network/loadBalancers/frontendIpConfigurations', 'loadBalancer', 'LBFE-v6')]"
               },
               "backendAddressPool": {
@@ -150,7 +160,7 @@
               "frontendPort": 8080,
               "backendPort": 8080,
               "probe": {
-                "id": "[resourceId('Microsoft.Network/loadBalancers/probes', 'loadBalancer', 'IPv6probe')]"
+                "id": "[resourceId('Microsoft.Network/loadBalancers/probes', 'loadBalancer', 'IPv4IPv6probe')]"
               }
             },
             "name": "lbrule-v6"
@@ -158,12 +168,12 @@
         ],
         "probes": [
           {
-            "name": "IPv6probe",
+            "name": "IPv4IPv6probe",
             "properties": {
               "protocol": "Tcp",
               "port": 8080,
               "intervalInSeconds": 30,
-              "numberOfProbes": 1
+              "numberOfProbes": 2
             }
           }
         ]
@@ -298,6 +308,25 @@
           "id": "[resourceId('Microsoft.Network/networkSecurityGroups','dsNsg')]"
         },
         "ipConfigurations": [
+          {
+            "name": "ipconfig-v4",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "privateIPAddressVersion": "IPv4",
+              "primary": true,
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',concat(variables('publicipName'),copyindex()))]"
+              },
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'VNET', variables('subnetName'))]"
+              },
+              "loadBalancerBackendAddressPools": [
+                {
+                  "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', 'loadBalancer', 'LBBAP')]"
+                }
+              ]
+            }
+          },
           {
             "name": "ipconfig-v6",
             "properties": {
