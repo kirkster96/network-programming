@@ -12,11 +12,11 @@ The template creates the following Azure resources:
 
 - a dual stack IP4/IPv6 Virtual Network (VNET) with a dual stack subnet
 - a virtual network interface (NIC) for the VM with both IPv4 and IPv6 endpoints
-- an Internet-facing STANDARD Load Balancer with an IPv4 and an IPv6 Public IP addresses and health probe
-- IPv6 Network Security Group rules (allow HTTP and RDP)
+- an Internet-facing STANDARD Load Balancer with an IPv6 Public IP addresses and health probe
+- IPv6 Network Security Group rules (allow CLIENT and SSH)
 - an IPv6 User-Defined Route to a fictitious Network Virtual Appliance
-- an IPv4 Public IP address for each VM to facilitate remote connection to the VM (RDP)
-- two virtual machines with both IPv4 and IPv6 endpoints in the VNET/subnet
+- an IPv4 Public IP address for each VM to facilitate remote connection to the VM (SSH)
+- one virtual machines with both IPv4 and IPv6 endpoints in the VNET/subnet
 
 The template was originaly created from: [da0cdd9 on Jul 6,2022 azure-quickstart-templates/demos/ipv6-in-vnet-stdlb/](https://github.com/Azure/azure-quickstart-templates/tree/da0cdd93d7dd7d842c9c7e89738d4682c8013495/demos/ipv6-in-vnet-stdlb)
 For more information about this template, see [What is IPv6 for Azure Virtual Network?](https://docs.microsoft.com/azure/virtual-network/ipv6-overview/)

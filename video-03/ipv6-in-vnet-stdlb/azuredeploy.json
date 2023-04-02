@@ -63,18 +63,6 @@
     {
       "apiVersion": "2020-07-01",
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "lbpublicip",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "Standard"
-      },
-      "properties": {
-        "publicIPAllocationMethod": "Static"
-      }
-    },
-    {
-      "apiVersion": "2020-07-01",
-      "type": "Microsoft.Network/publicIPAddresses",
       "name": "lbpublicip-v6",
       "location": "[parameters('location')]",
       "sku": {
@@ -107,7 +95,6 @@
         "name": "Standard"
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses','lbpublicip')]",
         "[resourceId('Microsoft.Network/publicIPAddresses','lbpublicip-v6')]"
       ],
       "properties": {
