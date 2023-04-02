@@ -1,10 +1,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
-#include <errno.h>
 
 #include <signal.h>
 #include <stdio.h>
@@ -12,7 +9,7 @@
 #include <time.h>
 
 #define PORT "8080"
-#define GETSOCKETERRNO() (errno)
+#define LISTEN_BACKLOG 50
 
 volatile sig_atomic_t stop_flag = 0;
 
@@ -27,13 +24,17 @@ int main() {
 
     char address_buffer[100];
     int server_fd, client_fd, send_count;
+
+    // Standard HTTP response header
     const char *response =
         "HTTP/1.1 200 OK\r\n"
         "Connection: close\r\n"
         "Content-Type: text/plain\r\n\r\n"
         "IPv6 Server time is: ";
+
     time_t timer;
     char *time_msg;
+    
     struct sockaddr_storage client_address;
     socklen_t client_len = sizeof(client_address);
 
@@ -64,7 +65,7 @@ int main() {
 
 
     printf("listen()\n");
-    if (listen(server_fd, 10) < 0) {
+    if (listen(server_fd, LISTEN_BACKLOG) < 0) {
         fprintf(stderr, "listen() failed.\n");
         return 1;
     }
