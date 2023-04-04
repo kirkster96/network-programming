@@ -21,4 +21,4 @@ The template creates the following Azure resources:
 The template was originaly created from: [da0cdd9 on Jul 6,2022 azure-quickstart-templates/demos/ipv6-in-vnet-stdlb/](https://github.com/Azure/azure-quickstart-templates/tree/da0cdd93d7dd7d842c9c7e89738d4682c8013495/demos/ipv6-in-vnet-stdlb)
 For more information about this template, see [What is IPv6 for Azure Virtual Network?](https://docs.microsoft.com/azure/virtual-network/ipv6-overview/)
 
-[![Watch the video](https://img.youtube.com/vi/qTIVVAoG94A/hqdefault.jpg)](https://www.youtube.com/watch?v=qTIVVAoG94A)
+[![Watch the video](https://img.youtube.com/vi/qnzVJ0-53Ow/hqdefault.jpg)](https://www.youtube.com/watch?v=qnzVJ0-53Ow)

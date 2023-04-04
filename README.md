@@ -15,4 +15,4 @@ In this video:
 - How to deploy a IPv6 Azure VM.
 - How to write IPv6 Server code.
 
-[![Watch the video](https://img.youtube.com/vi/qTIVVAoG94A/hqdefault.jpg)](https://www.youtube.com/watch?v=qTIVVAoG94A)
+[![Watch the video](https://img.youtube.com/vi/qnzVJ0-53Ow/hqdefault.jpg)](https://www.youtube.com/watch?v=qnzVJ0-53Ow)
