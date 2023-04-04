@@ -8,3 +8,11 @@ This video explains how to deploy C/C++ server code on an Azure VM and connect t
 This video explains in-depth how the C/C++ server code works and how to improve the code we saw in the last video.
 
 [![Watch the video](https://img.youtube.com/vi/qTIVVAoG94A/hqdefault.jpg)](https://www.youtube.com/watch?v=qTIVVAoG94A)
+
+## Video 03 - IPv6 Server on Azure VM
+In this video:
+- What is IPv4 and IPv6?
+- How to deploy a IPv6 Azure VM.
+- How to write IPv6 Server code.
+
+[![Watch the video](https://img.youtube.com/vi/qTIVVAoG94A/hqdefault.jpg)](https://www.youtube.com/watch?v=qTIVVAoG94A)
