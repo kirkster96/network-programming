@@ -5,7 +5,7 @@ In this video:
 - How to write Dual Stack Server code.
     
 ### IPv6 in Azure Virtual Network (VNET) with Std LB
-[![Deploy To Azure](https://raw.githubusercontent.com/kirkster96/network-programming/main/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkirkster96%2Fnetwork-programming%2Fvideo-04%2Fvideo-04%2Fipv6-in-vnet-stdlb%2Fazuredeploy.json)
+[![Deploy To Azure](https://raw.githubusercontent.com/kirkster96/network-programming/main/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkirkster96%2Fnetwork-programming%2Fvideo04-dev%2Fvideo-04%2Fipv6-in-vnet-stdlb%2Fazuredeploy.json)
 
 **This template demonstrates creation of a dual stack IPv4/IPv6 VNET with 1 IPv6 VM and a STANDARD Load Balancer.**
 The template creates the following Azure resources:
