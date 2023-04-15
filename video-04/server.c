@@ -13,12 +13,14 @@
 
 volatile sig_atomic_t stop_flag = 0;
 
-void sigint_handler(int signum) { 
-    //Handler for SIGINT
+void sigint_handler(int signum)
+{
+    // Handler for SIGINT
     stop_flag = 1;
 }
 
-int main() {
+int main()
+{
     signal(SIGINT, sigint_handler);
     printf("Press Ctrl+C to shutdown\n");
 
@@ -50,37 +52,53 @@ int main() {
 
     printf("socket()\n");
     server_fd = socket(bind_address->ai_family, bind_address->ai_socktype, bind_address->ai_protocol);
-    if (server_fd < 0) {
+    if (server_fd < 0)
+    {
         fprintf(stderr, "socket() failed.\n");
         return 1;
     }
 
+    // check if mapped IPv4 addresses are allowed
+    // socklen_t optsize = 0;
+    // int optval = 0;
+    // int rc = getsockopt(server_fd, IPPROTO_IPV6, IPV6_V6ONLY, &optval, &optsize);
+
+    // enable mapped IPv4 addresses
+    // int option = 0;
+    // if (setsockopt(server_fd, IPPROTO_IPV6, IPV6_V6ONLY, (void *)&option, sizeof(option)))
+    // {
+    //     fprintf(stderr, "setsockopt() failed.\n");
+    //     return 1;
+    // }
+
     printf("bind()\n");
-    if (bind(server_fd, bind_address->ai_addr, bind_address->ai_addrlen)) {
+    if (bind(server_fd, bind_address->ai_addr, bind_address->ai_addrlen))
+    {
         fprintf(stderr, "bind() failed.\n");
         return 1;
     }
     freeaddrinfo(bind_address);
 
-
     printf("listen()\n");
-    if (listen(server_fd, LISTEN_BACKLOG) < 0) {
+    if (listen(server_fd, LISTEN_BACKLOG) < 0)
+    {
         fprintf(stderr, "listen() failed.\n");
         return 1;
     }
 
     while (!stop_flag)
-    {    
+    {
         printf("Waiting for connection...\n");
-        client_fd = accept(server_fd, (struct sockaddr*) &client_address, &client_len);
-        if (client_fd < 0) {
+        client_fd = accept(server_fd, (struct sockaddr *)&client_address, &client_len);
+        if (client_fd < 0)
+        {
             fprintf(stderr, "accept() failed.\n");
             return 1;
         }
 
         printf("Client is connected... ");
         memset(address_buffer, 0, sizeof(address_buffer));
-        getnameinfo((struct sockaddr*)&client_address, client_len, address_buffer, sizeof(address_buffer), 0, 0, NI_NUMERICHOST);
+        getnameinfo((struct sockaddr *)&client_address, client_len, address_buffer, sizeof(address_buffer), 0, 0, NI_NUMERICHOST);
         printf("%s\n", address_buffer);
 
         printf("Sending response...\n");
