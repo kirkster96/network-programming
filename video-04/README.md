@@ -1,10 +1,10 @@
-# Video 04 - IPv6 Server on Azure VM
+# Video 04 - Dual Stack Server on Azure VM
 In this video:
 - What is a Mapped IPv4 Address?
 - How to deploy a IP4/IPv6 Azure VM.
 - How to write Dual Stack Server code.
     
-### dual stack IP4/IPv6 in Azure Virtual Network (VNET) with Std LB
+### Dual Stack IP4/IPv6 in Azure Virtual Network (VNET) with Std LB
 [![Deploy To Azure](https://raw.githubusercontent.com/kirkster96/network-programming/main/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkirkster96%2Fnetwork-programming%2Fvideo04-dev%2Fvideo-04%2Fipv6-in-vnet-stdlb%2Fazuredeploy.json)
 
 **This template demonstrates creation of a dual stack IPv4/IPv6 VNET with 1 IPv6 VM and a STANDARD Load Balancer.**
