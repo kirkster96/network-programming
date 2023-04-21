@@ -16,3 +16,11 @@ In this video:
 - How to write IPv6 Server code.
 
 [![Watch the video](https://img.youtube.com/vi/qnzVJ0-53Ow/hqdefault.jpg)](https://www.youtube.com/watch?v=qnzVJ0-53Ow)
+
+# Video 04 - Dual Stack Server on Azure VM
+In this video:
+- What is a Mapped IPv4 Address?
+- How to deploy a IP4/IPv6 Azure VM.
+- How to write Dual Stack Server code.
+
+[![Watch the video](https://img.youtube.com/vi/wiyZ7zhRzLM/hqdefault.jpg)](https://www.youtube.com/watch?v=wiyZ7zhRzLM)
