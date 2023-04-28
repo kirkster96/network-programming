@@ -24,3 +24,10 @@ In this video:
 - How to write Dual Stack Server code.
 
 [![Watch the video](https://img.youtube.com/vi/wiyZ7zhRzLM/hqdefault.jpg)](https://www.youtube.com/watch?v=wiyZ7zhRzLM)
+
+# Video 05 - TCP Client Deep Dive
+In this video:
+- What is Non-blocking I/O?
+- How to use the select function.
+
+[![Watch the video](https://img.youtube.com/vi/0wRr4QhkWKk/hqdefault.jpg)](https://www.youtube.com/watch?v=0wRr4QhkWKk)
