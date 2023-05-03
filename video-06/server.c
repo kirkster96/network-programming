@@ -39,7 +39,11 @@ int main(int argc, char const* argv[])
 	}
 	
 
-	if (bind(socket_fd, result->ai_addr, result->ai_addrlen) == 0)
+	if (bind(socket_fd, result->ai_addr, result->ai_addrlen))
+	{
+		fprintf(stderr, "bind() failed. (%d) %s\n", errno, strerror(errno));
+		exit(EXIT_FAILURE);
+	}
 	
 
 	if (listen(socket_fd, LISTEN_BACKLOG) < 0){
