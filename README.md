@@ -31,3 +31,9 @@ In this video:
 - How to use the select function.
 
 [![Watch the video](https://img.youtube.com/vi/0wRr4QhkWKk/hqdefault.jpg)](https://www.youtube.com/watch?v=0wRr4QhkWKk)
+
+# Video 06 - Error handling
+In this video:
+- What is errno and how do you use it?
+
+[![Watch the video](https://img.youtube.com/vi/2iMN96yK2MU/hqdefault.jpg)](https://www.youtube.com/watch?v=2iMN96yK2MU)
