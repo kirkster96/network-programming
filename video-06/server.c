@@ -24,7 +24,7 @@ int main(int argc, char const* argv[])
 	hints.ai_socktype = SOCK_STREAM;
 	hints.ai_flags = AI_PASSIVE;
 	
-	if (getaddrinfo(NULL, PORT , &hints, &result)) {
+	if (s = getaddrinfo(NULL, PORT , &hints, &result)) {
 		fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
 		exit(EXIT_FAILURE);
 	}

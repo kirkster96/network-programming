@@ -4,6 +4,8 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <netdb.h>
+#include <stdlib.h>
+#include <errno.h>
 
 #define BUFFER_SIZE 1024
 
@@ -19,9 +21,10 @@ int main(int argc, char *argv[]) {
     hints.ai_socktype = SOCK_STREAM;
 
     struct addrinfo *server_address;
-    if (getaddrinfo(argv[1], argv[2], &hints, &server_address)) {
-        printf("getaddrinfo() failed.\n");
-        return 1;
+    int s;
+    if (s = getaddrinfo(argv[1], argv[2], &hints, &server_address)) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
+		exit(EXIT_FAILURE);
     }
 
     printf("Creating socket...\n");
@@ -30,7 +33,7 @@ int main(int argc, char *argv[]) {
                         server_address->ai_socktype, 
                         server_address->ai_protocol);
     if (socket_fd<0) {
-        printf("socket() failed.\n");
+        fprintf(stderr, "socket() failed. (%d) %s\n", errno, strerror(errno));
         return 1;
     }
 
@@ -38,7 +41,7 @@ int main(int argc, char *argv[]) {
     if (connect(socket_fd,
                 server_address->ai_addr, 
                 server_address->ai_addrlen)) {
-        printf("connect() failed.\n");
+        fprintf(stderr, "connect() failed. (%d) %s\n", errno, strerror(errno));
         return 1;
     }
     
